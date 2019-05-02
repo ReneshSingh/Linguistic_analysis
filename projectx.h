@@ -13,7 +13,7 @@ class ProjectX : public QWidget
 {
     Q_OBJECT
 public:
-    ProjectX();
+    explicit ProjectX();
     QPushButton *submit, *report, *quit;
     ~ProjectX();
     QTextEdit *edit;
@@ -21,7 +21,7 @@ public slots:
     void analysis();
     void results();
 private:
-    QHash<QString, int> info;
+    QHash<QString, int> *info;
     QVBoxLayout *vlayout;
     QHBoxLayout *hlayout;
     QString temp;

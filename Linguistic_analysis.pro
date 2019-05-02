@@ -11,7 +11,9 @@ OTHER_FILES += \
 
 SOURCES += \
     Main.cpp \
-    projectx.cpp
+    projectx.cpp \
+    export.cpp
 
 HEADERS += \
-    projectx.h
+    projectx.h \
+    export.h

@@ -2,6 +2,7 @@
 
 ProjectX::ProjectX( ){
     submit = new QPushButton("Submit for analysis");
+    info = new QHash<QString, int>;
     report = new QPushButton("Analysis and report");
     quit = new QPushButton("Quit");
     edit = new QTextEdit();
@@ -24,22 +25,23 @@ void ProjectX::analysis(){
     temp = temp.remove('?').remove('!').remove('-').remove('(').remove(":");
     lKey = temp.split(' ',QString::SkipEmptyParts,Qt::CaseInsensitive);
     while(!lKey.isEmpty()){
-        info.insert(lKey.front(),info.value(lKey.front(),0)+1);
+        info->insert(lKey.front(),info->value(lKey.front(),0)+1);
         lKey.pop_front();
     }
     edit->clear();
 }
 void ProjectX::results(){
-    if (edit->toPlainText()!="Next text please")
+    if (edit->toPlainText()!=""){
         analysis();
-    edit->clear();
-    lKey =info.uniqueKeys();
+        edit->clear();
+    }
+    lKey =info->uniqueKeys();
     while (!lKey.isEmpty()){
-        temp= QString("%1\t%2").arg(lKey.front()). arg(info.value(lKey.front()));
+        temp= QString("%1\t%2").arg(lKey.front()). arg(info->value(lKey.front()));
         lKey.pop_front();
         edit->append(temp);
     }
-    info.clear();
+    info->clear();
 }
 ProjectX::~ProjectX(){
     delete submit;
@@ -48,4 +50,5 @@ ProjectX::~ProjectX(){
     delete edit;
     delete vlayout;
     delete hlayout;
+    delete info;
 }
