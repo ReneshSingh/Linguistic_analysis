@@ -11,9 +11,14 @@ OTHER_FILES += \
 
 SOURCES += \
     Main.cpp \
-    projectx.cpp \
-    export.cpp
+    export.cpp \
+    mainwindow.cpp \
+    LinguisticAnalysis.cpp
 
 HEADERS += \
-    projectx.h \
-    export.h
+    export.h \
+    mainwindow.h \
+    LinguisticAnalysis.h \
+
+FORMS += \
+    mainwindow.ui
