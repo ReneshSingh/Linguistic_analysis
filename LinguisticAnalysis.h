@@ -16,16 +16,11 @@ class LinguisticAnalysis : public QWidget
 public:
     explicit LinguisticAnalysis();
     ~LinguisticAnalysis();
-    void analysis(QString value); /*! < \br Counts unique words in the provided text.
-\Pram [in] value The text to be analysed. */
-    QString results(QString value); /*! \brief Checks if there is any text to analyse, then roports on the recorded values.
-
-\pram [in] value Text to be analysed.
-\pram [out] Tab separated values in the order words then occurances.
- */
-    void clear(); /*! \brief  Clears the data model. */
+    void analysis(QString value); // Counts unique words in the provided text.
+    QString results(QString value); // Checks if there is any text to analyse, then roports on the recorded values.
+    void clear(); // Clears the data model.
 signals:
-    void message(QString msg); /*! \brief clears the data set. */
+    void message(QString msg); //clears the data set.
 private:
     QHash<QString, int> *info; //Data set.
     QString temp;
