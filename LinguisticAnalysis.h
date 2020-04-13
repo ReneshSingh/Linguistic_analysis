@@ -20,7 +20,7 @@ public:
     QString results(QString value); // Checks if there is any text to analyse, then roports on the recorded values.
     void clear(); // Clears the data model.
 signals:
-    void message(QString msg); //clears the data set.
+    void emmitMessage(QString msg); //clears the data set.
 private:
     QHash<QString, int> *info; //Data set.
     QString temp;

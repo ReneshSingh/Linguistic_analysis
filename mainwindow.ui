@@ -23,6 +23,11 @@
       <height>221</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -44,7 +49,7 @@
      <x>0</x>
      <y>0</y>
      <width>741</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLinguistic_Analysis">
@@ -68,6 +73,12 @@
    <property name="text">
     <string>Analyse text</string>
    </property>
+   <property name="toolTip">
+    <string>Submits text for analysis </string>
+   </property>
+   <property name="whatsThis">
+    <string>Submits text for analysis </string>
+   </property>
    <property name="shortcut">
     <string>Alt+Y</string>
    </property>
@@ -79,6 +90,9 @@
    <property name="toolTip">
     <string>Analyse avaliable text and displaies a report</string>
    </property>
+   <property name="whatsThis">
+    <string>Analyse avaliable text and displaies a report</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+=</string>
    </property>
@@ -88,6 +102,9 @@
     <string>Clear</string>
    </property>
    <property name="toolTip">
+    <string>Clears the database and imput.</string>
+   </property>
+   <property name="whatsThis">
     <string>Clears the database and imput.</string>
    </property>
    <property name="shortcut">

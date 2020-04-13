@@ -5,5 +5,6 @@ int main(int argc, char *argv[]){
     QApplication app(argc,argv);
     MainWindow *mw = new MainWindow( );
     mw->show();
+    app.setApplicationVersion("2.2");
     return app.exec();
 }

@@ -4,7 +4,7 @@ LinguisticAnalysis::LinguisticAnalysis( ){
     info = new QHash<QString, int>;
 }
 void LinguisticAnalysis::analysis(QString value){
-    message("Processing text");
+    emmitMessage("Processing text ... ");
     temp = value;
     temp = temp.simplified();
     temp = temp.remove('.').remove(',').remove('"').remove(')').remove(";");
@@ -14,12 +14,15 @@ void LinguisticAnalysis::analysis(QString value){
         info->insert(lKey.front(),info->value(lKey.front(),0)+1);
         lKey.pop_front();
     }
-    message("Text processed");
+    emmitMessage("Text processed");
 }
 QString LinguisticAnalysis::results(QString value){
     QString result = "";
     if (value !=""){
         analysis(value);
+    } else if (info->isEmpty()){
+        emmitMessage("No text has been processed yet.");
+        return "";
     }
     lKey =info->uniqueKeys();
     while (!lKey.isEmpty()){
@@ -32,7 +35,7 @@ QString LinguisticAnalysis::results(QString value){
 }
 void LinguisticAnalysis::clear(){
     info->clear();
-    message("Data cleared");
+    emmitMessage("Data cleared");
 }
 LinguisticAnalysis::~LinguisticAnalysis(){
     delete info;
