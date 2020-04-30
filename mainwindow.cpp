@@ -8,11 +8,12 @@ MainWindow::MainWindow(QWidget *parent) :
     pt = new LinguisticAnalysis();
     ui->setupUi(this);
     ui->label->setText("");
-    ui->textEdit->setPlaceholderText("Enter text for analysis here. Click'Analyse text (Alt+y)' for multiple tex analysis.");
-    ui->actionReport->setEnabled(false);
+    //ui->actionReport->setEnabled(false);
     connect(pt, SIGNAL(emmitMessage(QString)), this, SLOT(pub_msg(QString)));
     connect(ui->actionAnalyse_text, SIGNAL(triggered()), this, SLOT(AnalyseText()));
+    connect(ui->ProcessButton, SIGNAL(clicked()), this, SLOT(AnalyseText()));
     connect(ui->actionReport, SIGNAL(triggered()), this, SLOT(CreateReport()));
+    connect(ui->ReportButton, SIGNAL(clicked()), this, SLOT(CreateReport()));
     connect(ui->actionClear, SIGNAL(triggered()), this, SLOT(ClearAll()));
 }
 void MainWindow::ClearAll(){
@@ -26,6 +27,7 @@ void MainWindow::AnalyseText(){
         pt->analysis(ui->textEdit->toPlainText());
         pub_msg("Text submitted for analysis.");
         ui->actionReport->setEnabled(true);
+        ui->ReportButton->setEnabled(true);
         ui->textEdit->clear();
     }
 }

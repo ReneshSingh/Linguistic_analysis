@@ -10,14 +10,22 @@
     <height>313</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextEdit" name="textEdit">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>30</x>
       <y>40</y>
       <width>721</width>
       <height>221</height>
@@ -28,18 +36,64 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string>Enter text for analysis here. Click'Analyse text (Alt+y)' for multiple tex analysis.</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>210</x>
       <y>10</y>
-      <width>501</width>
+      <width>371</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ReportButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>10</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Create Report</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ProcessButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>161</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Process Below Text</string>
     </property>
    </widget>
   </widget>
@@ -49,7 +103,7 @@
      <x>0</x>
      <y>0</y>
      <width>741</width>
-     <height>22</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuLinguistic_Analysis">
@@ -70,6 +124,9 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAnalyse_text">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Analyse text</string>
    </property>
@@ -84,6 +141,9 @@
    </property>
   </action>
   <action name="actionReport">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Report</string>
    </property>

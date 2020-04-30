@@ -2,9 +2,9 @@
 #include "mainwindow.h"
 
 int main(int argc, char *argv[]){
-    QApplication app(argc,argv);
+    QApplication *app = new QApplication(argc,argv);
     MainWindow *mw = new MainWindow( );
     mw->show();
-    app.setApplicationVersion("2.2");
-    return app.exec();
+    app->setApplicationVersion("2.3");
+    return app->exec();
 }
