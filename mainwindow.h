@@ -8,7 +8,7 @@
  * \brief The UI tool box.
  */
 namespace Ui {
-class MainWindow;
+class MainWindow; //!< \brief UI controler.
 }
 
 /*! \class MainWindow
@@ -24,8 +24,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 private slots:
-    void AnalyseText(); //!< Sends text from the UI to the linguistic analysis class for processing.
-    void CreateReport(); //!< Requests a report from the Linguistic analysis class.
+    void AnalyseText(); //!< \brief Sends text from the UI to the linguistic analysis class for processing.
+    void CreateReport(); //!< \brief Requests a report from the Linguistic analysis class.
     void ClearAll(); //!< \brief clears linguistic dataset.
     void pub_msg(QString msg); //!< \brief Publishes message to the UI.
 private:

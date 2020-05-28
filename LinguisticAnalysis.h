@@ -11,7 +11,21 @@
 namespace LinguisticAnalysis_Tools
 {
 class LinguisticAnalysis;
+struct LinguisticData;
 }
+
+/*!< \struct LinguisticData
+ * \brief Contains the data from processing the text.
+ */
+struct LinguisticData
+{
+    QHash<QString, int> *info;
+    /*!< \brief Data set.
+     *
+     * The QString value contains the words while the int value contains the occurrances.
+     */
+    int wordCount = 0; //!< Unique word couont;
+};
 
 /*! \clas Linguistic Analysis
  * \brief Determines the frequencies of unique word in a text.
@@ -29,7 +43,7 @@ public:
 signals:
     void emmitMessage(QString msg); //!< \brief Publishes messages from this class to the event stream in the msg value.
 private:
-    QHash<QString, int> *info; //Data set.
+    LinguisticData ds;
     QString temp;
     QStringList lKey;
 };
